@@ -37,3 +37,9 @@ FROM `departments`;
 SELECT *
 FROM `teachers`
 WHERE `phone` IS NULL;
+
+3. Selezionare tutti gli studenti che hanno più di 30 anni
+
+SELECT `name`, `surname`,`date_of_birth`, TIMESTAMPDIFF(YEAR,`date_of_birth`,CURDATE()) as 'age'   
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`,CURDATE()) > 30;
